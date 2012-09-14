@@ -8,10 +8,10 @@ src=""
 input=""
 if [ -e "$id.c" ];then
 	gcc "$id.c" -o "$id.exe" || exit
-	[ -e "$id.in" ] && ./"$id" < "$id.in"
+	[ -e "$id.in" ] && ./"$id.exe" < "$id.in"
 elif [ -e "$id.cpp" ];then
 	g++ "$id.cpp" -o "$id.exe" || exit
-	[ -e "$id.in" ] && ./"$id" < "$id.in"
+	[ -e "$id.in" ] && ./"$id.exe" < "$id.in"
 elif [ -e "poj$id.java" ];then
 	javac "poj$id.java" || exit
 	[ -e "$id.in" ] && java "poj$id" < "$id.in"
