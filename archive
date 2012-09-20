@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 1 ];then
+	echo "usage: $0 #ID"
+	exit
+fi
+id="$1"
+if [ -f "$id" ];then
+	echo "WRONG: $id is file, not dir."
+elif [ -d "$id" ];then
+	echo "INFO: $id exists."
+else
+	echo "INFO: mkdir $id/"
+	mkdir $id || exit
+fi
+[ -e "$id.c"     ] && mv "$id.c"    "$id/"   || echo "WRONG: Cannot move $id.c into $id/"
+[ -e "$id.cpp"   ] && mv "$id.cpp"  "$id/"   || echo "WRONG: Cannot move $id.cpp into $id/"
+[ -e "$id.cc"    ] && mv "$id.cc"   "$id/"   || echo "WRONG: Cannot move $id.cc into $id/"
+[ -e "$id.in"    ] && mv "$id.in"   "$id/"   || echo "WRONG: Cannot move $id.in into $id/"
+[ -e "$id.out"   ] && mv "$id.out"  "$id/"   || echo "WRONG: Cannot move $id.out into $id/"
+[ -e "poj$id.java" ] && mv "poj$id.java" "$id/"  || echo "WRONG: Cannot move poj$id.java into $id/"
+echo "Done."
