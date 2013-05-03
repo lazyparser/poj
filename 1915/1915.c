@@ -1,4 +1,4 @@
-# Stack-based BFS
+/* Stack-based BFS */
 #include <stdio.h>
 int board[300][300];
 int stackx[300*300];
