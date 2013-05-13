@@ -1,0 +1,12 @@
+#!/bin/bash
+
+lines=`wc -l 1753.testcases | cut -f1 -d' '`
+for((i=0;i<lines;i+=5)); do
+	for((j=0;j<4;j+=1)); do
+		read
+		echo $REPLY
+	done | ./1753.exe
+	read
+	echo $REPLY
+done
+	
