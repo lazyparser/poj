@@ -1,4 +1,5 @@
 #!/bin/bash
 find . -name '*~' -exec rm -vf "{}" \;
 find . -name '*.exe' -exec rm -vf "{}" \;
+find . -name '*.class' -exec rm -vf "{}" \;
 echo "Done."
