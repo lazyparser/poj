@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+typedef long long ll;
+ll combine(ll n, ll m, ll max){
+	ll i,rlt = 0;
+	if(n==0)
+		return (m==0);
+	else if(n==1)
+		return (m<=max);
+	if(m<max)
+		max=m;
+	for(i=max;i>=0;--i){
+		rlt += combine(n-1,m-i,i);
+	}
+	return rlt % 1000000007;
+}
+int main(){
+	ll n,m;
+	scanf("%lld%lld",&n,&m);
+	printf("%lld\n",combine(n,m,m));
+	return 0;
+}
+
