@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int d[1000000],small[1000000],big[1000000];
+int main(){
+	int n,k,i,j,min,max;
+	scanf("%d%d",&n,&k);
+	for(i=0;i<n;++i)
+		scanf("%d",d+i);
+	for(i=k-1;i<n;++i){
+		min = max = d[i];
+		for(j=1;j<k;j++){
+			if(min>d[i-j])
+				min = d[i-j];
+			if(max<d[i-j])
+				max = d[i-j];
+		}
+		small[i]=min;
+		big[i]=max;
+	}
+	printf("%d",small[k-1]);
+	for(i=k;i<n;++i)
+		printf(" %d",small[i]);
+	printf("\n");
+	printf("%d",big[k-1]);
+	for(i=k;i<n;++i)
+		printf(" %d",big[i]);
+	printf("\n");
+	return 0;
+}
+
