@@ -4,3 +4,7 @@
 *~
 *.wa
 *.rle
+*.swp
+*.bak
+*.tmp
+a.out
