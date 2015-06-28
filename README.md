@@ -9,6 +9,6 @@ Short Coding
 ------------
 
 The codes in ``sc.xxxx.[c|cpp]`` are copied from the book
-<Short Coding - Shokunin-tachi no Giho> by Ozy,
+**Short Coding - Shokunin-tachi no Giho** by Ozy,
 supervised by Urao Yane Copyright(C) 2007 Ozy.
 
